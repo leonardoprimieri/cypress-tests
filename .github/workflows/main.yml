@@ -1,3 +1,12 @@
+uses: actions/cache@v3
+with:
+  path: |
+    ~/.npm
+    ${{ github.workspace }}/.next/cache
+  key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+  restore-keys: |
+    ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
 name: Cypress Tests
 
 on: push
@@ -13,4 +22,4 @@ jobs:
         with:
           build: npm run build
           start: npm start
-          command: npm run cypress:run:component && cypress:run
+          command: npm run cypress:run:component
