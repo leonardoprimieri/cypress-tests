@@ -7,7 +7,7 @@ describe("<NewsletterInput />", () => {
 
     cy.get('input[type="checkbox"]').check();
     cy.get(
-      'span:contains("By checking this box you agree to receive our newsletter")'
+      'span:contains("By checking this box you agree to receive our newslettera")'
     ).should("be.visible");
   });
 
