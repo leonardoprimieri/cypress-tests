@@ -13,4 +13,4 @@ jobs:
         with:
           build: npm run build
           start: npm start
-          command: npm run cypress:run:component
+          command: npm run cypress:run:component && cypress:run
